@@ -16,7 +16,7 @@ import com.shayanne.desafioshayanne.viewmodel.RepositoryViewModelFactory
 import com.shayanne.desafioshayanne.viewmodel.RepositoryViewState
 
 
-class RepositoryActivity() : AppCompatActivity(), RepositoryAdapter.ItemClickListener {
+class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListener {
 
 
     private val repositoryViewModel: RepositoryViewModel by viewModels {

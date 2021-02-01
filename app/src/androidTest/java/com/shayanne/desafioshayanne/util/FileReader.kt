@@ -1,4 +1,4 @@
-package com.shayanne.desafioshayanne
+package com.shayanne.desafioshayanne.util
 import androidx.test.platform.app.InstrumentationRegistry
 
 //funcao que encontra e le o arquivo json que criamos

@@ -7,10 +7,9 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.jakewharton.espresso.OkHttp3IdlingResource
 import com.shayanne.desafioshayanne.api.InicializadorApi
-import com.shayanne.desafioshayanne.loadAsFixture
+import com.shayanne.desafioshayanne.util.loadAsFixture
 import com.shayanne.desafioshayanne.pull.PullActivity
-import com.shayanne.desafioshayanne.repository.RepositoryActivity
-import com.shayanne.desafioshayanne.retryer
+import com.shayanne.desafioshayanne.util.retryer
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 

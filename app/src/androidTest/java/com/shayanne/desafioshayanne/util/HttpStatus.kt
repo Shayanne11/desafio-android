@@ -1,4 +1,4 @@
-package com.shayanne.desafioshayanne
+package com.shayanne.desafioshayanne.util
 
 object HttpStatus {
 

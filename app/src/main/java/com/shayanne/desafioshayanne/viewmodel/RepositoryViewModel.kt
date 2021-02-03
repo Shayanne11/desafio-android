@@ -36,7 +36,7 @@ class RepositoryViewModel(
                      logger.logMessage("MainActivity-loadMore", "isSucessfull, page : $page")
                     /*Log.d("MainActivity-loadMore", "isSucessfull, page : $page")*/
                     response.body()?.let {
-                        state.postValue(RepositoryViewState.Sucesso(it.items))
+                        state.value = /*postValue*/RepositoryViewState.Sucesso(it.items)
                     }
                 } else {
                     logger.logMessage(

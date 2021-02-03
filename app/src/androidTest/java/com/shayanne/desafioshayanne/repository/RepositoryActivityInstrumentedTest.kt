@@ -66,7 +66,7 @@ class RepositoryInstrumentedTestActivityTest {
 
     // Erro de conexão:
     @Test
-    fun givenRequestFail_shouldShowRequestFailed() {
+    fun givenNetworkError_shouldShowRequestFailed() {
         // ao usar o mock em teste instrumentado vc nao testa o parse, por isso nao é recomendado
         repositoryArrange(mockWebServerRule) {
             //estamos dizendo o que queremos que o servidor responda

@@ -60,7 +60,7 @@ class RepositoryInstrumentedTestActivityTest {
         //irá procurar a frase que colocamos para o usuario visualizar em caso de erro do servidor,
         //no caso é a frase Erro desconhecido que está no nosso arquivo de Strings e que usamos na viewModel
         Assert {
-            checkTextVisible("Erro desconhecido")
+            checkTextVisible("Erro desconhecido, caro cleitinho")
         }
     }
 

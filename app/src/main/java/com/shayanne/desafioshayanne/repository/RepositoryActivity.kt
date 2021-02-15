@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.shayanne.desafioshayanne.api.InicializadorApi
+import com.shayanne.desafioshayanne.api.InicializerApi
 import com.shayanne.desafioshayanne.pull.PullActivity
 import com.shayanne.desafioshayanne.databinding.ActivityRepositoryBinding
 import com.shayanne.desafioshayanne.viewmodel.RepositoryViewModel
@@ -20,7 +20,7 @@ import com.shayanne.desafioshayanne.viewmodel.RepositoryViewState
 class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListener {
 
     private val repositoryViewModel: RepositoryViewModel by viewModels {
-        RepositoryViewModelFactory(InicializadorApi.webClientGithub)
+        RepositoryViewModelFactory(InicializerApi.webClientGithub)
     }
 
     private lateinit var binding: ActivityRepositoryBinding
@@ -55,7 +55,6 @@ class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListe
                 override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
                     binding.progressBar.visibility = View.VISIBLE
                     repositoryViewModel.loadpage(page)
-
                 }
             })
 
@@ -98,5 +97,4 @@ class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListe
         intent.putExtra(PullActivity.REPOSITORY, repositoryAdapter.listrep[position].name)
         startActivity(intent)
     }
-
 }

@@ -1,6 +1,6 @@
 package com.shayanne.desafioshayanne.util
 
-import com.shayanne.desafioshayanne.api.InicializadorApi
+import com.shayanne.desafioshayanne.api.InicializerApi
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
@@ -14,7 +14,7 @@ class MockWebServerRule: TestWatcher() {
         super.starting(description)
 
         mockWebServer.start(8080)
-        InicializadorApi.baseUrl = mockWebServer.url("/").toString()
+        InicializerApi.baseUrl = mockWebServer.url("/").toString()
     }
 
     //finaliza o teste

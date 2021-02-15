@@ -1,4 +1,4 @@
-package com.shayanne.desafioshayanne.viewmodel
+package com.shayanne.desafioshayanne.viewmodel.viewmodelrepository
 
 import com.shayanne.desafioshayanne.model.RepositoryRequests
 

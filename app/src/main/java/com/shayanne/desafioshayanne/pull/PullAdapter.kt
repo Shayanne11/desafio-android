@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shayanne.desafioshayanne.R
 import com.shayanne.desafioshayanne.model.PullRequests
 import com.shayanne.desafioshayanne.utils.loadImageUrl
-import com.squareup.picasso.Picasso
 
 class PullAdapter(
 

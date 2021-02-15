@@ -23,7 +23,7 @@ plugins {
 detekt {
     input = files("app/src/main/java")
     config = files("config/detekt/detekt.yml")
-    autoCorrect = true
+    autoCorrect = false
     // basePath = projectDir
     reports {
         html {

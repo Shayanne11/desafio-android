@@ -5,6 +5,8 @@ import com.shayanne.desafioshayanne.R
 import com.shayanne.desafioshayanne.api.ApiWebClientRequest
 import com.shayanne.desafioshayanne.model.Owner
 import com.shayanne.desafioshayanne.model.PullRequests
+import com.shayanne.desafioshayanne.viewmodel.viewmodelpull.PullViewModel
+import com.shayanne.desafioshayanne.viewmodel.viewmodelpull.PullViewState
 import io.mockk.every
 import io.mockk.mockk
 import okhttp3.ResponseBody.Companion.toResponseBody

@@ -7,6 +7,8 @@ import com.shayanne.desafioshayanne.api.ApiWebClientRequest
 import com.shayanne.desafioshayanne.model.ItemsRepositories
 import com.shayanne.desafioshayanne.model.Owner
 import com.shayanne.desafioshayanne.model.RepositoryRequests
+import com.shayanne.desafioshayanne.viewmodel.viewmodelrepository.RepositoryViewModel
+import com.shayanne.desafioshayanne.viewmodel.viewmodelrepository.RepositoryViewState
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
@@ -69,7 +71,8 @@ class RepositoryViewModelTest {
 
         viewModel.loadpage(1)
 
-        assertEquals(RepositoryViewState.Erro(R.string.error_network_request_failed ),
+        assertEquals(
+            RepositoryViewState.Erro(R.string.error_network_request_failed ),
             viewModel.getViewState().value)
     }
 

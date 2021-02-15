@@ -1,6 +1,5 @@
-package com.shayanne.desafioshayanne.viewmodel
+package com.shayanne.desafioshayanne.viewmodel.viewmodelrepository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +11,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class RepositoryViewModel(
     // private val callGit é onde chamamos a api
     private val callGit: ApiWebClientRequest,
@@ -23,7 +21,6 @@ class RepositoryViewModel(
 
     // esta é apenas uma LiveData, nao é mutable, pois nao queremos que a activity a altere
     fun getViewState(): LiveData<RepositoryViewState> = state
-
 
     fun loadpage(page: Int) {
         // paginacao

@@ -14,6 +14,7 @@ import com.shayanne.desafioshayanne.util.loadAsFixture
 import com.shayanne.desafioshayanne.util.retryer
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
+import org.hamcrest.Matchers.endsWith
 
 
 class repositoryArrange(
@@ -74,9 +75,10 @@ class Assert(action: Assert.() -> Unit){
     }
     fun checkTextVisible(text :String){
         //o retryer tenta chamar o servidor e contém  o delay, vide com command +b
-        //retryer {
-            onView(withText(text)).check(matches(isDisplayed()))
-       // }
+       // retryer {
+          onView(withText(text)).check(matches(isDisplayed()))
+   //     onView(withText(endsWith(text))).check(matches(isDisplayed()))
+     //   }
     }
 
 }

@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shayanne.desafioshayanne.api.InicializadorApi
 import com.shayanne.desafioshayanne.pull.PullActivity
 import com.shayanne.desafioshayanne.databinding.ActivityRepositoryBinding
-import com.shayanne.desafioshayanne.viewmodel.RepositoryViewModel
-import com.shayanne.desafioshayanne.viewmodel.RepositoryViewModelFactory
-import com.shayanne.desafioshayanne.viewmodel.RepositoryViewState
+import com.shayanne.desafioshayanne.viewmodel.viewmodelrepository.RepositoryViewModel
+import com.shayanne.desafioshayanne.viewmodel.viewmodelrepository.RepositoryViewModelFactory
+import com.shayanne.desafioshayanne.viewmodel.viewmodelrepository.RepositoryViewState
 
 class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListener {
 
@@ -55,7 +55,6 @@ class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListe
                 override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
                     binding.progressBar.visibility = View.VISIBLE
                     repositoryViewModel.loadpage(page)
-
                 }
             })
 
@@ -98,5 +97,4 @@ class RepositoryActivity : AppCompatActivity(), RepositoryAdapter.ItemClickListe
         intent.putExtra(PullActivity.REPOSITORY, repositoryAdapter.listrep[position].name)
         startActivity(intent)
     }
-
 }

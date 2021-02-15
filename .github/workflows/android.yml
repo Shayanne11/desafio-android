@@ -1,0 +1,42 @@
+name: Android CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Instrumented_tests:
+    runs-on: macOS-latest    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run instrumented Tests
+        uses: reactivecircus/android-emulator-runner@v1
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+          
+  Unit_tests:
+    runs-on: ubuntu-latest   
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+      - name: Run unit tests
+        run: bash ./gradlew testDebugUnitTest
+  
+  Detekt_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+      - name: Run detekt
+        run: bash ./gradlew detekt

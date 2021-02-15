@@ -12,7 +12,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.shayanne.desafioshayanne.R
-import com.shayanne.desafioshayanne.api.InicializadorApi
+import com.shayanne.desafioshayanne.api.InicializerApi
 import com.shayanne.desafioshayanne.databinding.ActivityPullBinding
 import com.shayanne.desafioshayanne.model.PullRequests
 import com.shayanne.desafioshayanne.viewmodel.PullViewModel
@@ -22,14 +22,13 @@ import com.shayanne.desafioshayanne.viewmodel.PullViewState
 class PullActivity : AppCompatActivity(), PullAdapter.ItemClickListener {
 
     private val pullViewModel: PullViewModel by viewModels {
-        PullViewModelFactory(InicializadorApi.webClientGithub)
+        PullViewModelFactory(InicializerApi.webClientGithub)
     }
     val list = ArrayList<PullRequests>()
     val pullAdapter = PullAdapter(list, this)
     var owner = ""
     var repository = ""
     private lateinit var bindingpull: ActivityPullBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +44,9 @@ class PullActivity : AppCompatActivity(), PullAdapter.ItemClickListener {
         bindingpull.recyclerviewIdPull.setHasFixedSize(true)
         bindingpull.recyclerviewIdPull.adapter = pullAdapter
 
-
-        //intent pra chamar a pagina do pull
+        // intent pra chamar a pagina do pull
         owner = intent.getStringExtra(OWNER).toString()
         repository = intent.getStringExtra(REPOSITORY).toString()
-
 
         // BOTAO DE RETORNAR
         setSupportActionBar(findViewById(R.id.toolbar2))
@@ -60,7 +57,6 @@ class PullActivity : AppCompatActivity(), PullAdapter.ItemClickListener {
         pullViewModel.loadurl(owner, repository)
 
         observeViewModel()
-
     }
 
     private fun observeViewModel() {
@@ -71,7 +67,6 @@ class PullActivity : AppCompatActivity(), PullAdapter.ItemClickListener {
                 is PullViewState.Sucesso -> {
 
                     pullAdapter.addRepositories(it.list)
-
                 }
 
                 is PullViewState.Erro -> {

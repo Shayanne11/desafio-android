@@ -75,10 +75,10 @@ class Assert(action: Assert.() -> Unit){
     }
     fun checkTextVisible(text :String){
         //o retryer tenta chamar o servidor e contém  o delay, vide com command +b
-        retryer {
+      //  retryer {
             Espresso.onView(ViewMatchers.withText(text))
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        }
+       // }
     }
 
 }

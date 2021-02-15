@@ -3,12 +3,15 @@
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.shayanne.desafioshayanne.util.HttpStatus
 import com.shayanne.desafioshayanne.util.MockWebServerRule
 import com.shayanne.desafioshayanne.util.loadAsFixture
+import com.shayanne.desafioshayanne.util.retryer
 
 import okhttp3.mockwebserver.MockResponse
 
@@ -71,9 +74,8 @@ class Assert(action: Assert.() -> Unit){
     }
     fun checkTextVisible(text :String){
         //o retryer tenta chamar o servidor e contém  o delay, vide com command +b
-      //  retryer {
-        onView(withText(text)).check(matches(isDisplayed()))
-       // }
+        retryer {
+        onView(withText(text)).check(matches(isDisplayed())) }
     }
 
 }

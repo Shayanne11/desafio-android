@@ -5,6 +5,7 @@ import androidx.core.os.bundleOf
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.shayanne.desafioshayanne.util.loadAsFixture
@@ -76,7 +77,7 @@ class Assert(action: Assert.() -> Unit){
     fun checkTextVisible(text :String){
         //o retryer tenta chamar o servidor e contém  o delay, vide com command +b
       //  retryer {
-            Espresso.onView(ViewMatchers.withText(text))
+            onView(ViewMatchers.withText(text))
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
        // }
     }
